@@ -1,0 +1,66 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+
+\usepackage{braket}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{The value of a Hartree-Fock calculation}
+\author{David Rowe}
+\date{2016-02-11}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+Hi Arthur
+
+The calculation would be in two steps the second of which I had supposed could be done with Anna's program.
+
+\section{Step 1}
+
+Step 1 is the following (described in more detail in Rowe-Bartlett-Bahri).
+
+Consider an Sp(3,R) irrep, with lowest weight state $\Ket{N_0(\lambda\mu)}$
+which is an eigenstate of a spherical harmonic oscillator of energy 
+$N_0 \hbar\omega$, of weight $(\tau_1,\tau_2,\tau_3)$
+with 
+$N_0 =  \tau_1 + \tau_2 + \tau_3$, 
+$\lambda= \tau_1 - \tau_2$, 
+$\mu = \tau_2 - \tau_3$,
+which is also an U(3)  highest-weight state.
+However, for an initial calculation we are going to restrict consideration to an irrep with $\mu=0$, i.e., with $\tau_2=\tau_3$.
+
+Now define the shape-consistent state  $\Ket{\phi(\epsilon)}$, which is an eigenstate of the  axially symmetric harmonic oscillator Hamiltonian  with eigenvalue
+$$\tau_1 \hbar\omega_1 + 2\tau_2 \hbar\omega$$, where $\omega_1$ is defined by the equation
+$\tau_1\omega_1 = \tau_2\omega = \tau_3\omega$.
+
+
+The state  $\Ket{\phi(\epsilon)}$ is a linear combination of  states, 
+$\Ket{\epsilon L 0}$ of angular momentum $L$ with even or odd values, 
+$L= 0,2,4,\ldots$ or $L=1,3,5,\ldots$, according as $\lambda$ is even or odd.
+We need only consider  a finite set of $L \leq L_{max}$.
+What is needed is the expansion of the states $\Ket{\epsilon L 0}$ as sums of spherical harmonic oscillator eigenstates, i.e., we need the coefficients in the expansions
+$$\Ket{\epsilon L 0} = \sum_n f_{nL} \Ket{N_n (\lambda+2n,0) L 0}$$.
+
+\section{Step 2}
+
+Step 2 is to calculate the kinetic energies
+$\Bra{\epsilon L 0} K.E. \Ket{\epsilon L 0}$
+I supposed that this could be done with Anna's code, although it now occurs to me that there may be some tricky questions about conveying information about the phase convention  in use.  It is also likely that calculating the matrix elements of the kinetic energies of these state is easy (in this special $\mu = 0$ case) and doesn't need a sophisticated code. (I will think about it).
+
+We will be away in Texas from Feb 14 to 26 but hopefully I will be able to access my email.
+
+Cheers
+
+
+
+
+\end{document}  
